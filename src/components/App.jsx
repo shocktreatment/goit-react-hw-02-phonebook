@@ -14,7 +14,7 @@ class App extends Component {
       { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
-    filter: [],
+    filter: "",
   };
 
   addContact = ({ name, number }) => {
@@ -62,15 +62,13 @@ class App extends Component {
 
     const { filter, contacts } = this.state;
 
-    const filteredContacts = contacts.filter(contact =>
-      contact.name.includes(filter)
-    );
-
-    // НЕ ПРАЦЮЄ через toLowerCase <---------------------------------
-    // ГОРИТЬ КОНСОЛЬ
-    // const filteredContacts = contacts.filter(contact =>
-    //   contact.name.toLowerCase().includes(filter.toLowerCase())
+    // const filteredContactsByLittleLetter = contacts.filter(contact =>
+    //   contact.name.includes(filter)
     // );
+
+    const filteredContacts = contacts.filter(contact =>
+      contact.name.toLowerCase().includes(filter.toLowerCase())
+    );
 
     return (
       <>
