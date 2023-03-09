@@ -65,6 +65,7 @@ class App extends Component {
     // const filteredContactsByLittleLetter = contacts.filter(contact =>
     //   contact.name.includes(filter)
     // );
+    
 
     const filteredContacts = contacts.filter(contact =>
       contact.name.toLowerCase().includes(filter.toLowerCase())
